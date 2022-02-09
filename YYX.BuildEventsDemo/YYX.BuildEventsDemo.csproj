@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo %25cd%25&#xD;&#xA;echo f | xcopy /y bin\Debug\net6.0\YYX.BuildEventsDemo.exe ..\YYX.BuildEventsDemo.exe" />
+  </Target>
+
+</Project>
